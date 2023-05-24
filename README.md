@@ -82,4 +82,4 @@ Make sure you have [Cargo](https://www.rust-lang.org/tools/install) installed an
 
 ## C#
 
-Make sure you have [Dotnet sdk](https://dotnet.microsoft.com/en-us/download) installed and just do ```cargo build``` and the exe should appear in the bin\debug\netYourDotnetVersion folder.
+Make sure you have [Dotnet sdk](https://dotnet.microsoft.com/en-us/download) installed and just do ```dotnet build``` and the exe should appear in the bin\debug\netYourDotnetVersion folder.

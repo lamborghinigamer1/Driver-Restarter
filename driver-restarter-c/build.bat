@@ -2,8 +2,8 @@ if not exist "bin" (
     mkdir bin
 )
 
-if exist bin\device-restarter.exe (
-    del bin\device-restarter.exe
+if exist bin\device-restarter-c.exe (
+    del bin\device-restarter-c.exe
 )
 
-gcc main.c -o bin\device-restarter.exe
+gcc main.c -o bin\device-restarter-c.exe

@@ -7,7 +7,8 @@ int main(int argc, char const *argv[])
     if (argc < 2 || strlen(argv[1]) == 0)
     {
         printf("No device instance path was given.\n");
-        printf("1. Open Device Manager\n2. Find the driver you want to restart, right-click, and select Properties\n3. Navigate to the Details tab and find the Device Instance Path\n4. Right-click and select Copy\n5. Run the executable in the command prompt and put the device instance path between double quotes.\n");
+        printf("Please read the manual for more information\n");
+        system("start https://github.com/lamborghinigamer1/Driver-Restarter/blob/main/README.md");
         printf("Press any key to exit...");
         getchar();
         return 1;
