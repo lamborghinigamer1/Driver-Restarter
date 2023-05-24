@@ -1,12 +1,24 @@
 use std::env;
-use std::io::{self};
 use std::process::Command;
+use std::io::{self};
 
+fn pause() {
+    println!("Press any key to exit...");
+
+    let mut input = String::new();
+
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Failed to read line");
+}
 fn main() {
-    let args: Vec<String> = env::args().collect();
 
-    if args.len() < 2 {
+    let allargs: Vec<String> = env::args().collect();
+
+    if allargs.len() <= 1 {
+
         println!("\nNo device instance path was given.");
+
         println!("Please read the manual for more information");
         let mut manual = Command::new("cmd");
         manual.args([
@@ -25,36 +37,37 @@ fn main() {
         }
         pause();
     } else {
-        let device_identifier = &args[1];
+        for args in allargs.iter().skip(1) {
+            let device_identifier = &args;
 
-        let mut disable = Command::new("pnputil");
-        disable.arg("/disable-device").arg(device_identifier);
-        let mut enable = Command::new("pnputil");
-        enable.arg("/enable-device").arg(device_identifier);
+            let mut disable = Command::new("pnputil");
 
-        match disable.output() {
-            Ok(o) => unsafe {
-                println!("{}", String::from_utf8_unchecked(o.stdout));
-            },
-            Err(e) => {
-                println!("Error: {}", e);
+            disable.arg("/disable-device");
+            disable.arg(device_identifier);
+
+            let mut enable = Command::new("pnputil");
+
+            enable.arg("/enable-device");
+            enable.arg(device_identifier);
+
+            match disable.output() {
+                Ok(output) => unsafe {
+                    println!("{}", String::from_utf8_unchecked(output.stdout));
+                },
+
+                Err(er) => {
+                    println!("Error: {}", er);
+                }
             }
-        }
 
-        match enable.output() {
-            Ok(o) => unsafe {
-                println!("{}", String::from_utf8_unchecked(o.stdout));
-            },
-            Err(e) => {
-                println!("Error: {}", e);
+            match enable.output() {
+                Ok(output) => unsafe {
+                    println!("{}", String::from_utf8_unchecked(output.stdout));
+                },
+                Err(e) => {
+                    println!("Error: {}", e);
+                }
             }
         }
     }
-}
-fn pause() {
-    println!("Press enter to exit...");
-    let mut input = String::new();
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read line");
 }

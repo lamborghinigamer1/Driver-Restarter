@@ -4,7 +4,7 @@
 
 int main(int argc, char const *argv[])
 {
-    if (argc < 2 || strlen(argv[1]) == 0)
+    if (argc <= 1 || strlen(argv[1]) == 0)
     {
         printf("No device instance path was given.\n");
         printf("Please read the manual for more information\n");

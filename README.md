@@ -58,6 +58,10 @@ Well I had issues with my Windows 10 installation that I manually had to restart
 
 10. Test if your driver starts automatically
 
+## Something worth knowing:
+
+You can put multiple DeviceInstances id's in: ```device-restarter-c.exe "DeviceInstanceId1" "DeviceInstanceId2"```
+
 # Troubleshooting
 
 ## Admin privileges
