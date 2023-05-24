@@ -54,7 +54,7 @@ Well I had issues with my Windows 10 installation that I manually had to restart
 
 8. Go to actions and then press new and press browse and select device-restarter.exe
 
-9. Add in arguments between "" the device instance path and press OK
+9. Add in arguments the device instance path and press OK
 
 10. Test if your driver starts automatically
 
