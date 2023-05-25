@@ -8,35 +8,7 @@ Well I had issues with my Windows 10 installation that I manually had to restart
 
 # How to run
 
-## Method 1 Command prompt:
-
-1. Open device manager
-
-2. Find the driver you want restart and right click and press properties
-
-3. navigate to details and find device instance path
-
-4. Right click and press copy
-
-5. Run the exe in Command prompt as admin and put the device instance path between ""
-
-## Method 2 shortcut: 
-
-1. Open device manager
-
-2. Find the driver you want restart and right click and press properties
-
-3. navigate to details and find device instance path
-
-4. Right click and press copy
-
-5. Right click the exe and press Create Shortcut
-
-6. Right click the shortcut and click Properties
-
-7. At the end of the target add a space and "" and paste your device instance path between the "". Example: YourPath\device-restarter.exe "DeviceInstanceId"
-
-## Method 3 startup:
+## Method 1 Startup:
 
 1. Open device manager
 
@@ -57,6 +29,34 @@ Well I had issues with my Windows 10 installation that I manually had to restart
 9. Add in arguments between "" the device instance path and press OK
 
 10. Test if your driver starts automatically
+
+## Method 2 Shortcut: 
+
+1. Open device manager
+
+2. Find the driver you want restart and right click and press properties
+
+3. navigate to details and find device instance path
+
+4. Right click and press copy
+
+5. Right click the exe and press Create Shortcut
+
+6. Right click the shortcut and click Properties
+
+7. At the end of the target add a space and "" and paste your device instance path between the "". Example: YourPath\device-restarter.exe "DeviceInstanceId"
+
+## Method 3 Command prompt:
+
+1. Open device manager
+
+2. Find the driver you want restart and right click and press properties
+
+3. navigate to details and find device instance path
+
+4. Right click and press copy
+
+5. Run the exe in Command prompt as admin and put the device instance path between ""
 
 ## Something worth knowing:
 
